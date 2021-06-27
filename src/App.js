@@ -1,25 +1,27 @@
-import logo from './logo.svg';
+import React from 'react';
+import Home from './Home';
+import About from './About';
+import Service from './Service';
+import Contact from './Contact';
+import { Switch, Route} from 'react-router-dom';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Welcome <to>Dear students,</to> Learn more and do practice on live project. We will fight together.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Know more
-        </a>
-      </header>
-    </div>
+const App = () => {
+
+  return(
+
+    <>
+      <Switch>
+
+       <Route path='/' component={Home} />
+       <Route path='/about' component={About} />
+       <Route path='/service' component={Service} />
+       <Route path='/contact' component={Contact} />
+
+      </Switch>
+    </>
+
   );
-}
+};
 
 export default App;
